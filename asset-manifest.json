@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/geographun-demo/static/css/main.073c9b0a.css",
+    "main.js": "/geographun-demo/static/js/main.faf970bc.js",
+    "static/js/787.8792ab64.chunk.js": "/geographun-demo/static/js/787.8792ab64.chunk.js",
+    "index.html": "/geographun-demo/index.html",
+    "main.073c9b0a.css.map": "/geographun-demo/static/css/main.073c9b0a.css.map",
+    "main.faf970bc.js.map": "/geographun-demo/static/js/main.faf970bc.js.map",
+    "787.8792ab64.chunk.js.map": "/geographun-demo/static/js/787.8792ab64.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.faf970bc.js"
+  ]
+}
