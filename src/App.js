@@ -6,6 +6,8 @@ import { gameData } from "./helpers/gameData"
 import NavBar from "./components/NavBar"
 import GamesHome from "./components/GamesHome"
 import GamePage from "./containers/GamePage"
+import Countries from "./containers/Countries"
+import CountryDetails from "./components/CountryDetails"
 import Footer from "./components/Footer"
 
 const Container = styled.div`
@@ -28,12 +30,8 @@ function App() {
                     <Route path="/capitals" element={<GamePage gameInfo={gameData.capitals} />} />
                     <Route path="/populations" element={<GamePage gameInfo={gameData.populations} />} />
 
-                    {/* <Route path="/languages" />
-                    <Route path="/capitals" />
-                    <Route path="/populations" />
-
-                    <Route path="/countries" />
-                    <Route path="/countries/:id" /> */}
+                    <Route path="/countries" element={<Countries/>} />
+                    <Route path="/countries/:name" element={<CountryDetails/>} />
                 </Routes>
                 <Footer />
             </Router>
