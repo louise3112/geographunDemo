@@ -1,15 +1,23 @@
 {
   "files": {
-    "main.css": "/geographun-demo/static/css/main.073c9b0a.css",
-    "main.js": "/geographun-demo/static/js/main.faf970bc.js",
+    "main.css": "/geographun-demo/static/css/main.e6c13ad2.css",
+    "main.js": "/geographun-demo/static/js/main.f5e4e7d7.js",
     "static/js/787.8792ab64.chunk.js": "/geographun-demo/static/js/787.8792ab64.chunk.js",
+    "static/media/languages.jpeg": "/geographun-demo/static/media/languages.eb41735f02499fd99e63.jpeg",
+    "static/media/playingCard.png": "/geographun-demo/static/media/playingCard.b98517b32893376a258a.png",
+    "static/media/capitals.jpg": "/geographun-demo/static/media/capitals.d14d77bcd6e85c835ea3.jpg",
+    "static/media/population.jpeg": "/geographun-demo/static/media/population.dd21af7d44b6881f6a42.jpeg",
+    "static/media/flags.jpg": "/geographun-demo/static/media/flags.55a03013df3b8665f2b7.jpg",
+    "static/media/logo.png": "/geographun-demo/static/media/logo.ce6e0828de7073ef1a8d.png",
+    "static/media/tick.png": "/geographun-demo/static/media/tick.a634850579ddf93671f4.png",
+    "static/media/cross.png": "/geographun-demo/static/media/cross.2fce6214b7c60c745aa6.png",
     "index.html": "/geographun-demo/index.html",
-    "main.073c9b0a.css.map": "/geographun-demo/static/css/main.073c9b0a.css.map",
-    "main.faf970bc.js.map": "/geographun-demo/static/js/main.faf970bc.js.map",
+    "main.e6c13ad2.css.map": "/geographun-demo/static/css/main.e6c13ad2.css.map",
+    "main.f5e4e7d7.js.map": "/geographun-demo/static/js/main.f5e4e7d7.js.map",
     "787.8792ab64.chunk.js.map": "/geographun-demo/static/js/787.8792ab64.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.faf970bc.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.f5e4e7d7.js"
   ]
 }
