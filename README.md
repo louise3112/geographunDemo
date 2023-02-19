@@ -9,7 +9,7 @@ The original group project was to design a full-stack app using the Countries AP
 
 The code for the full-stack geograPHUN app as completed for the group project can be found in my [geograPHUN github repository](https://github.com/louise3112/geograPHUN).
 
-Following completion of the group project, I took a further 1.5 days to refactor the front-end code to ensure it was DRY, more reusable and to allow me to host a [demo version of the app via Github pages](https://louise3112.github.io/geographun-demo/).
+Following completion of the group project, I took a further 1.5 days to refactor the front-end code to ensure it was DRY, more reusable and to allow me to host a [demo version of the app via Github pages](https://louise3112.github.io/geographun-demo/). I found this to be a really useful exercise to consolidate my learning from the project, in particular on those sections of those code that were primarily led on by other members of the team.
 
 
 ## Getting Started
