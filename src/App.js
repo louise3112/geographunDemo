@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { useEffect } from "react"
 import styled from "styled-components"
 
 import { gameData } from "./helpers/gameData"
@@ -25,14 +24,14 @@ function App() {
             <Router>
                 <NavBar gameData={gameData}/>
                 <Routes>
-                    <Route path="/" element={<GamesHome gameData={gameData}/>}/>
-                    <Route path="/flags" element={<GamePage gameInfo={gameData.flags} />} />
-                    <Route path="/languages" element={<GamePage gameInfo={gameData.languages} />} />
-                    <Route path="/capitals" element={<GamePage gameInfo={gameData.capitals} />} />
-                    <Route path="/populations" element={<GamePage gameInfo={gameData.populations} />} />
+                    <Route path="/geographun-demo" element={<GamesHome gameData={gameData}/>}/>
+                    <Route path="/geographun-demo/flags" element={<GamePage gameInfo={gameData.flags} />} />
+                    <Route path="/geographun-demo/languages" element={<GamePage gameInfo={gameData.languages} />} />
+                    <Route path="/geographun-demo/capitals" element={<GamePage gameInfo={gameData.capitals} />} />
+                    <Route path="/geographun-demo/populations" element={<GamePage gameInfo={gameData.populations} />} />
 
-                    <Route path="/countries" element={<Countries/>} />
-                    <Route path="/countries/:name" element={<CountryDetails/>} />
+                    <Route path="/geographun-demo/countries" element={<Countries/>} />
+                    <Route path="/geographun-demo/countries/:name" element={<CountryDetails/>} />
                 </Routes>
                 <Footer />
             </Router>

@@ -15,7 +15,7 @@ const FooterText = styled.p`
 const Footer = () => {
     return (
         <FooterBox>
-            <FooterText>Based on geograPHUN © 2023</FooterText>
+            <FooterText><b>Please note</b> this is a front end demo of geograPHUN© <b>only</b> and so scores are <b>not</b> retained if you change or refresh pages!</FooterText>
         </FooterBox>
     )
 }
