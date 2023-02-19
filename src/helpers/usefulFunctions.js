@@ -4,16 +4,23 @@ export const randomIndex = (totalOptions) => {
 }
 
 // Selects a random array of n countries:
-export const randomCountries = (array, n) => {
+export const randomCountries = (array, n, category) => {
     const selected = []
     const remaining = [...array]
 
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < n;) {
         let index = randomIndex(remaining.length)
-        selected.push(remaining[index])
-        remaining.splice(index, 1)
+        let newAnswer = remaining[index]
+
+        // Assess uniquness of answer value:
+        let answerExists = selected.findIndex(answer => answer[category] === newAnswer[category])
+
+        if (answerExists < 0) {
+            selected.push(newAnswer)
+            remaining.splice(index, 1)
+            i++
+        }
     }
     
     return selected
 }
-

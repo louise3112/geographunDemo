@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 
 import Logo from "../images/logo.png"
 
-// import { useState } from "react";
-
 const NavBarContainer = styled.ul`
     margin: 0;
     padding: 0.8em;
@@ -12,11 +10,9 @@ const NavBarContainer = styled.ul`
     display: flex;
     align-items: center;
 `
-
 const LogoLink = styled(Link)`
     margin-right: 2em;
 `
-
 const SectionLink = styled(Link)`
     width: 10em;
     text-decoration: none;
@@ -28,42 +24,48 @@ const SectionLink = styled(Link)`
         color: gold;
     }
 `
+const DropdownContent = styled.div`
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 18em;
+    padding: 1em;
+    background-color: #3c7f61;
+`
+const GamesDropdown = styled.div`
+    position: relative;
+    display: inline-block;
+    width: 18em;
+    text-align: center;
+    &:hover ${DropdownContent} {
+        visibility: visible;
+    }
+`
+const GamesLink = styled(SectionLink)`
+    /* display: block; */
+    width: 18em;
+    margin: 0.5em 0em 0em 0em;
+`
 
-// const QuizzesDropDown = styled.div`
-//     display: flex;
-//     flex-direction: column;
-//     background-color: #3c7f61;
-//     color: #fff;
-//     position: absolute;
-//     top: 60px;
-//     left: 0;
-//     z-index: 1;
-// `
-
-const NavBar = () => {
-
-    // const [showQuizzes, setShowQuizzes] = useState(false)
+const NavBar = ({gameData}) => {
 
     return (
         <NavBarContainer>
             <LogoLink to="/">
                 <img src={Logo} alt="geograPHUN logo" height="80em"/>
             </LogoLink>
-            <SectionLink to="/">Games</SectionLink>
 
-            {/* <NavBarLayout>
-                <NavLink to="/" style={{ textAlign: "center", padding: "0 2.5em" }} onMouseEnter={() => setShowQuizzes(!showQuizzes)}>
-                Games
-                </NavLink>
-                {showQuizzes && (
-                    <QuizzesDropDown>
-                        <NavLink to="/FlagQuiz">Whose Flag Is It Anyway?</NavLink>
-                        <NavLink to="/LanguageQuiz">Language Challenge</NavLink>
-                        <NavLink to="/CapitalsQuiz">A Question of Capitals</NavLink>
-                        <NavLink to="/PopulationQuiz">Play Your Population Right</NavLink>
-                    </QuizzesDropDown>
-                )}
-            </NavBarLayout> */}
+            <GamesDropdown>
+                <SectionLink to="/">Games</SectionLink>
+                <DropdownContent>
+                    <GamesLink to="/flags">{gameData.flags.name}</GamesLink>
+                    <GamesLink to="/languages">{gameData.languages.name}</GamesLink>
+                    <GamesLink to="/capitals">{gameData.capitals.name}</GamesLink>
+                    <GamesLink to="/populations">{gameData.populations.name}</GamesLink>
+                </DropdownContent>
+            </GamesDropdown>
 
             <SectionLink to="/countries">Countries Facts</SectionLink>
         </NavBarContainer>

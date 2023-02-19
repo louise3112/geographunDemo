@@ -26,7 +26,7 @@ const Dropdown = ({gameInfo, data, updateScores}) => {
 
     const prepAnswer = (countriesArray, n) => {
 
-        const randomCountry = randomCountries(countriesArray, n)
+        const randomCountry = randomCountries(countriesArray, n, gameInfo.category)
         setCorrectAnswer(randomCountry[0])
     }
 

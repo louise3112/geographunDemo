@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { useEffect } from "react"
 import styled from "styled-components"
 
 import { gameData } from "./helpers/gameData"
@@ -22,9 +23,9 @@ function App() {
     return (
         <Container>
             <Router>
-                <NavBar />
+                <NavBar gameData={gameData}/>
                 <Routes>
-                    <Route path="/" element={<GamesHome />}/>
+                    <Route path="/" element={<GamesHome gameData={gameData}/>}/>
                     <Route path="/flags" element={<GamePage gameInfo={gameData.flags} />} />
                     <Route path="/languages" element={<GamePage gameInfo={gameData.languages} />} />
                     <Route path="/capitals" element={<GamePage gameInfo={gameData.capitals} />} />

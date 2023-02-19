@@ -27,7 +27,7 @@ const MultiChoice = ({gameInfo, data, updateScores}) => {
 
     const prepAnswers = (countriesArray, n) => {
 
-        const randomCountriesArray = randomCountries(countriesArray, n)
+        const randomCountriesArray = randomCountries(countriesArray, n, gameInfo.category)
         const correctAnswerIndex = randomIndex(n)
         const answersList = randomCountriesArray.map((country, index) => {
             return {

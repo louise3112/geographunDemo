@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { gameData } from "../helpers/gameData"
 
 const GamesGrid = styled.ul`
     flex-grow: 1;
@@ -43,7 +42,7 @@ const GameName = styled.h2`
     margin: 1em 0em 0em 0em;
 `
 
-const GamesHome = () => {
+const GamesHome = ({gameData}) => {
 
     return (
         <GamesGrid>
