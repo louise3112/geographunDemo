@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import Scores from "../components/games/Scores"
 import MultiChoice from "./MultiChoice"
 import Dropdown from "./Dropdown"
+import HigherLower from "./HigherLower"
 
 import styled from "styled-components"
 
@@ -59,6 +60,8 @@ const GamePage = ({gameInfo}) => {
             return <MultiChoice gameInfo={gameInfo} data={allCountries} updateScores={updateScores}/>
         } else if (gameInfo.type === "dropdown") {
             return <Dropdown gameInfo={gameInfo} data={allCountries} updateScores={updateScores}/>
+        } else if (gameInfo.type === "higher-lower") {
+            return <HigherLower gameInfo={gameInfo} data={allCountries} updateScores={updateScores}/>
         }
     }
 
@@ -75,7 +78,6 @@ const GamePage = ({gameInfo}) => {
         <Game>
             <GameName>{gameInfo.name}</GameName>
             <Scores scores={scores}/>
-
             {allCountries.length > 0 && gameType()}
         </Game>
     )

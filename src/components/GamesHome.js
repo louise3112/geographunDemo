@@ -1,11 +1,6 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { gameData } from "../../helpers/gameData"
-
-import flags from "../../images/flags.jpg"
-import city from "../../images/cityscape.jpg"
-import population from "../../images/population.jpeg"
-import languages from "../../images/languages.jpeg"
+import { gameData } from "../helpers/gameData"
 
 const GamesGrid = styled.ul`
     flex-grow: 1;
@@ -52,23 +47,23 @@ const GamesHome = () => {
     return (
         <GamesGrid>
             <GameLink to="/flags">
-                <GameImage src={flags} />
+                <GameImage src={gameData.flags.image} />
                 <GameName>{gameData.flags.name}</GameName>
             </GameLink>
 
             <GameLink to="/languages">
-                <GameImage src={languages} />
-                <GameName>Language Challenge</GameName>
+                <GameImage src={gameData.languages.image} />
+                <GameName>{gameData.languages.name}</GameName>
             </GameLink>
 
             <GameLink to="/capitals">
-                <GameImage src={city} />
-                <GameName>A Question Of Capitals</GameName>
+                <GameImage src={gameData.capitals.image} />
+                <GameName>{gameData.capitals.name}</GameName>
             </GameLink>
 
             <GameLink to="/populations">
-                <GameImage src={population} />
-                <GameName>Play Your Population Right</GameName>
+                <GameImage src={gameData.populations.image} />
+                <GameName>{gameData.populations.name}</GameName>
             </GameLink>
         </GamesGrid>
     )

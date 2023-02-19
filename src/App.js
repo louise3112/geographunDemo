@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { gameData } from "./helpers/gameData"
 
 import NavBar from "./components/NavBar"
-import GamesHome from "./components/games/GamesHome"
+import GamesHome from "./components/GamesHome"
 import GamePage from "./containers/GamePage"
 import Footer from "./components/Footer"
 
@@ -26,6 +26,7 @@ function App() {
                     <Route path="/flags" element={<GamePage gameInfo={gameData.flags} />} />
                     <Route path="/languages" element={<GamePage gameInfo={gameData.languages} />} />
                     <Route path="/capitals" element={<GamePage gameInfo={gameData.capitals} />} />
+                    <Route path="/populations" element={<GamePage gameInfo={gameData.populations} />} />
 
                     {/* <Route path="/languages" />
                     <Route path="/capitals" />
