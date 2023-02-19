@@ -25,6 +25,7 @@ function App() {
                     <Route path="/" element={<GamesHome />}/>
                     <Route path="/flags" element={<GamePage gameInfo={gameData.flags} />} />
                     <Route path="/languages" element={<GamePage gameInfo={gameData.languages} />} />
+                    <Route path="/capitals" element={<GamePage gameInfo={gameData.capitals} />} />
 
                     {/* <Route path="/languages" />
                     <Route path="/capitals" />

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import MultiChoice from "./MultiChoice"
+import Dropdown from "./Dropdown"
 
 import styled from "styled-components"
 
@@ -12,7 +13,7 @@ const GameName = styled.h2`
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2.5em;
     text-align: center;
-    margin: 0.5em 0em 0em 0em;
+    margin: 0.5em 0em 0.5em 0em;
 `
 
 const GamePage = ({gameInfo}) => {
@@ -50,13 +51,18 @@ const GamePage = ({gameInfo}) => {
             .then(res => setAllCountries(res))
     }
 
+    const gameType = () => {
+        if (gameInfo.type === "multichoice") {
+            return <MultiChoice gameInfo={gameInfo} data={allCountries}/>
+        } else if (gameInfo.type === "dropdown") {
+            return <Dropdown gameInfo={gameInfo} data={allCountries}/>
+        }
+    }
+
     return (
         <Game>
             <GameName>{gameInfo.name}</GameName>
-            {allCountries.length > 0 &&
-                (gameInfo.type === "multichoice" && <MultiChoice gameInfo={gameInfo} data={allCountries}/>)
-
-            }
+            {allCountries.length > 0 && gameType()}
         </Game>
     )
 

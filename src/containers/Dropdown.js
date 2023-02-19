@@ -5,7 +5,7 @@ import { randomCountries, randomIndex } from "../helpers/usefulFunctions"
 
 import Question from "../components/games/Question"
 import Clue from "../components/games/Clue"
-import AnswerMulti from "../components/games/AnswerMulti"
+import AnswerDropdown from "../components/games/AnswerDropdown"
 import Result from "../components/games/Result"
 import PlayAgain from "../components/games/PlayAgain"
 
@@ -15,39 +15,28 @@ const Game = styled.div`
     align-items: center;
 `
 
-const MultiChoice = ({gameInfo, data}) => {
+const Dropdown = ({gameInfo, data}) => {
 
-    const [answers, setAnswers] = useState([])
     const [correctAnswer, setCorrectAnswer] = useState({})
     const [guess, setGuess] = useState(null)
 
     useEffect(() => {
-        prepAnswers(data, 3)
+        prepAnswer(data, 1)
     }, [])
 
-    const prepAnswers = (countriesArray, n) => {
+    const prepAnswer = (countriesArray, n) => {
 
-        const randomCountriesArray = randomCountries(countriesArray, n)
-        const correctAnswerIndex = randomIndex(n)
-        const answersList = randomCountriesArray.map((country, index) => {
-            return {
-                ...country,
-                isCorrect: index === correctAnswerIndex
-            }
-        })
-        setAnswers(answersList)
-
-        const correctAnswerOption = answersList.filter(answer => answer.isCorrect)
-        setCorrectAnswer(correctAnswerOption[0])
+        const randomCountry = randomCountries(countriesArray, n)
+        setCorrectAnswer(randomCountry[0])
     }
 
-    const processAnswer = (result) => {
-        setGuess(result)
+    const processGuess = (userGuess) => {
+        setGuess(userGuess === correctAnswer.name.toLowerCase())
     }
 
     const newGame = () => {
         setGuess(null)
-        prepAnswers(data, 3)
+        prepAnswer(data, 1)
     }
 
     return(
@@ -59,11 +48,11 @@ const MultiChoice = ({gameInfo, data}) => {
             {correctAnswer !== {} && <Clue gameInfo={gameInfo} answer={correctAnswer}/>}
 
             {guess === null
-                ? <AnswerMulti answers={answers} processAnswer={processAnswer}/>
+                ? <AnswerDropdown allCountries={data} processGuess={processGuess}/>
                 : <PlayAgain category={gameInfo.category} newGame={newGame}/>}
         </Game>
     )
 
 }
 
-export default MultiChoice
+export default Dropdown
