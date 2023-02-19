@@ -14,13 +14,13 @@ const CardBack = styled.img`
     width: 14em;
 `
 
-const HigherLowerCards = ({answers, processGame}) => {
+const HigherLowerCards = ({answers, processGuess}) => {
 
     const listOfCards = answers.map(country => {
         if (country.status === "none") {
             return <CardBack src={playingCard} alt='Playing Card' key={country.code} />
         } else {
-            return <CardFront key={country.code} country={country} processGame={processGame}/>
+            return <CardFront key={country.code} country={country} processGuess={processGuess}/>
         }
     })
 

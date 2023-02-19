@@ -8,7 +8,7 @@ const FlagPic = styled.img`
     height: 6em;
 `
 const Card = styled.div`
-    width: 11.5em;
+    width: 12em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,13 +17,6 @@ const Card = styled.div`
     padding: 1.5em 1em 1.5em 1em;
     border: groove #ADB5B5;
     border-radius: 20px;
-
-    /* @media only screen and (max-width: 720px) {
-        width: 150px;
-        height: 250px;
-        min-width: 150px;
-        min-height: 250px;
-    }  */
 `
 const Button = styled.button`
     background-color: #5F898A;
@@ -37,16 +30,15 @@ const EmptySpace = styled.div`
     flex-grow: 1;
 `
 
-
-const CardFront = ({country, processGame}) => {
+const CardFront = ({country, processGuess}) => {
 
     const handleClick = (evt) => {
-        processGame(country, evt.target.value)
+        processGuess(country, evt.target.value)
     }
 
     return (
         <Card>
-            {country.status === "current" ? <Button onClick={handleClick} value="higher">HIGHER</Button> : <EmptySpace />}
+            {country.status === "current" && <Button onClick={handleClick} value="higher">HIGHER</Button>}
             <h4>{country.name}</h4>
             <FlagPic src={country.flag} alt={"Flag for " + country.name}/>
             <p><b>Population:</b> {country.status === "current" ? "????" : country.population.toLocaleString()}</p>

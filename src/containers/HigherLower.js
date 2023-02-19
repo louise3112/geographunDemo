@@ -26,9 +26,10 @@ const HigherLower = ({gameInfo, data, updateScores}) => {
     const prepAnswers = (countriesArray, n) => {
 
         const randomCountriesArray = randomCountries(countriesArray, n)
-        const answersList = randomCountriesArray.map((country) => {
+        const answersList = randomCountriesArray.map((country, index) => {
             return {
                 ...country,
+                cardPosition: index,
                 status: "none",
                 answer: "",
                 guessCorrect: null
@@ -49,6 +50,23 @@ const HigherLower = ({gameInfo, data, updateScores}) => {
         setAnswers(answersList)
     }
 
+    const processGuess = (country, guess) => {
+        const updatedAnswers = answers.map(answer => {
+            return {...answer}
+        })
+        const result = (country.answer === guess)
+
+        updatedAnswers[country.cardPosition].status = "played"
+        updatedAnswers[country.cardPosition].guessCorrect = result
+
+        if (country.cardPosition === answers.length - 1 | !result) {
+            processGame(result)
+        } else {
+            updatedAnswers[country.cardPosition + 1].status = "current"
+        }
+        setAnswers(updatedAnswers)
+    }
+
     const processGame = (result) => {
         setGameResult(result)
         updateScores(result)
@@ -62,18 +80,14 @@ const HigherLower = ({gameInfo, data, updateScores}) => {
     return(
         <Game>
             {gameResult === null && <Question text={gameInfo.question}/>}
+
             {gameResult !== null && 
                 <>
                     <Result guess={gameResult} type={gameInfo.type}/>
                     <PlayAgain category={gameInfo.category} newGame={newGame}/>
                 </>}
 
-            <HigherLowerCards answers={answers} processGame={processGame}/>
-
-            {/* {gameResult === null
-                ? <AnswerMulti answers={answers} processAnswer={processAnswer}/>
-                : <PlayAgain category={gameInfo.category} newGame={newGame}/>} */}
-
+            <HigherLowerCards answers={answers} processGuess={processGuess}/>
         </Game>
     )
 

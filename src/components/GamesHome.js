@@ -16,6 +16,7 @@ const GameLink = styled(Link)`
     text-decoration: none;
     background-color: #5F898A;
     width: 60%;
+    max-width: 30em;
     padding: 4% 5% 4% 5%;
     border: 1px solid #ccc;
     border-radius: 10px;
