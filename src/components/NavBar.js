@@ -66,7 +66,7 @@ const NavBar = ({gameData}) => {
                 </DropdownContent>
             </GamesDropdown>
 
-            <SectionLink to="/countries">Countries Facts</SectionLink>
+            <SectionLink to="/geographun-demo/countries">Countries Facts</SectionLink>
         </NavBarContainer>
     )
 }
