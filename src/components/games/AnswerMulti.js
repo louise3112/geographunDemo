@@ -21,12 +21,6 @@ const AnswerOption = styled.button`
 
 const AnswerOptions = ({answers, processAnswer}) => {
 
-    // const correctCountry = answers.filter(answer => answer.isCorrect)[0]
-
-    // const handleClick = (evt) => {
-    //     processAnswer(evt.target.value, correctCountry)
-    // }
-
     const listOfAnswerOptions = answers.map(answer => {
         return <AnswerOption onClick={() => {processAnswer(answer.isCorrect)}} key={answer.code}>{answer.name}</AnswerOption>
     })
@@ -36,7 +30,6 @@ const AnswerOptions = ({answers, processAnswer}) => {
             {listOfAnswerOptions}
         </AnswerBlock>
     )
-
 }
 
 export default AnswerOptions

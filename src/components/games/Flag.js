@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 const Picture = styled.img`
-    width: 25em;
+    /* width: 25em; */
+    height: 15em;
     border: solid lightgrey;
     margin: 1em 0em 0em 0em;
 `

@@ -17,15 +17,3 @@ export const randomCountries = (array, n) => {
     return selected
 }
 
-export const prepAnswers = (countriesArray) => {
-    const randomCountriesArray = randomCountries(countriesArray, 3)
-    const correctAnswerIndex = randomIndex(randomCountriesArray.length)
-    const answersList = randomCountriesArray.map((country, index) => {
-        return {
-            ...country,
-            isCorrect: index === correctAnswerIndex
-        }
-    })
-
-    return answersList
-}

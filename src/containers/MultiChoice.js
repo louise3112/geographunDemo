@@ -3,11 +3,11 @@ import styled from "styled-components"
 
 import { randomCountries, randomIndex } from "../helpers/usefulFunctions"
 
-import Name from "../components/games/Name"
 import Question from "../components/games/Question"
-import Flag from "../components/games/Flag"
-import AnswerOptions from "../components/games/AnswerOptions"
+import Clue from "../components/games/Clue"
+import AnswerMulti from "../components/games/AnswerMulti"
 import Result from "../components/games/Result"
+import PlayAgain from "../components/games/PlayAgain"
 
 const Game = styled.div`
     display: flex;
@@ -26,6 +26,7 @@ const MultiChoice = ({gameInfo, data}) => {
     }, [])
 
     const prepAnswers = (countriesArray, n) => {
+
         const randomCountriesArray = randomCountries(countriesArray, n)
         const correctAnswerIndex = randomIndex(n)
         const answersList = randomCountriesArray.map((country, index) => {
@@ -51,13 +52,19 @@ const MultiChoice = ({gameInfo, data}) => {
 
     return(
         <Game>
-            <Name text={gameInfo.name}/>
-            <Question text={gameInfo.question}/>
-            {gameInfo.type === "flag" && <Flag answer={correctAnswer}/>}
+            {guess === null 
+                ? <Question text={gameInfo.question}/>
+                : <Result guess={guess} answer={correctAnswer} text={gameInfo.answer}/>}
+            
+            {correctAnswer !== {} && <Clue gameInfo={gameInfo} answer={correctAnswer}/>}
+
+            {/* {gameInfo.category === "flag" 
+                ? <Flag answer={correctAnswer}/>
+                : <Image} */}
 
             {guess === null
-                ? <AnswerOptions answers={answers} processAnswer={processAnswer}/>
-                : <Result guess={guess} answer={correctAnswer} type={gameInfo.type} newGame={newGame}/>}
+                ? <AnswerMulti answers={answers} processAnswer={processAnswer}/>
+                : <PlayAgain category={gameInfo.category} newGame={newGame}/>}
         </Game>
     )
 

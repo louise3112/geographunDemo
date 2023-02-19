@@ -1,9 +1,8 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-
 import { gameData } from "../../helpers/gameData"
+
 import flags from "../../images/flags.jpg"
-// import flags from "../images/flags.jpg"
 import city from "../../images/cityscape.jpg"
 import population from "../../images/population.jpeg"
 import languages from "../../images/languages.jpeg"
