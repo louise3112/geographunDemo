@@ -44,7 +44,6 @@ const GamesDropdown = styled.div`
     }
 `
 const GamesLink = styled(SectionLink)`
-    /* display: block; */
     width: 18em;
     margin: 0.5em 0em 0em 0em;
 `
@@ -53,17 +52,17 @@ const NavBar = ({gameData}) => {
 
     return (
         <NavBarContainer>
-            <LogoLink to="/">
+            <LogoLink to="/geographun-demo">
                 <img src={Logo} alt="geograPHUN logo" height="80em"/>
             </LogoLink>
 
             <GamesDropdown>
-                <SectionLink to="/">Games</SectionLink>
+                <SectionLink to="/geographun-demo">Games</SectionLink>
                 <DropdownContent>
-                    <GamesLink to="/flags">{gameData.flags.name}</GamesLink>
-                    <GamesLink to="/languages">{gameData.languages.name}</GamesLink>
-                    <GamesLink to="/capitals">{gameData.capitals.name}</GamesLink>
-                    <GamesLink to="/populations">{gameData.populations.name}</GamesLink>
+                    <GamesLink to="/geographun-demo/flags">{gameData.flags.name}</GamesLink>
+                    <GamesLink to="/geographun-demo/languages">{gameData.languages.name}</GamesLink>
+                    <GamesLink to="/geographun-demo/capitals">{gameData.capitals.name}</GamesLink>
+                    <GamesLink to="/geographun-demo/populations">{gameData.populations.name}</GamesLink>
                 </DropdownContent>
             </GamesDropdown>
 

@@ -46,22 +46,22 @@ const GamesHome = ({gameData}) => {
 
     return (
         <GamesGrid>
-            <GameLink to="/flags">
+            <GameLink to="/geographun-demo/flags">
                 <GameImage src={gameData.flags.image} />
                 <GameName>{gameData.flags.name}</GameName>
             </GameLink>
 
-            <GameLink to="/languages">
+            <GameLink to="/geographun-demo/languages">
                 <GameImage src={gameData.languages.image} />
                 <GameName>{gameData.languages.name}</GameName>
             </GameLink>
 
-            <GameLink to="/capitals">
+            <GameLink to="/geographun-demo/capitals">
                 <GameImage src={gameData.capitals.image} />
                 <GameName>{gameData.capitals.name}</GameName>
             </GameLink>
 
-            <GameLink to="/populations">
+            <GameLink to="/geographun-demo/populations">
                 <GameImage src={gameData.populations.image} />
                 <GameName>{gameData.populations.name}</GameName>
             </GameLink>

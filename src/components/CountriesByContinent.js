@@ -22,7 +22,7 @@ const CountriesByContinent = ({continent, countries}) => {
     const sortedCountries = countries.sort((x, y) => (x.name > y.name) ? 1 : -1)
 
     const countryLinks = sortedCountries.map((country) => {
-        return <Item key={country.code}><CountryLink to={"/countries/" + country.name}> {country.name}</CountryLink></Item>
+        return <Item key={country.code}><CountryLink to={"/geographun-demo/countries/" + country.name}> {country.name}</CountryLink></Item>
     })
 
     return (
