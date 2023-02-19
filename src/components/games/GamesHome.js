@@ -8,6 +8,7 @@ import population from "../../images/population.jpeg"
 import languages from "../../images/languages.jpeg"
 
 const GamesGrid = styled.ul`
+    flex-grow: 1;
     padding: 2% 4% 2% 4%;
     margin: 0;
     display: grid;

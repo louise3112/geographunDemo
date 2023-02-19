@@ -15,7 +15,7 @@ const Game = styled.div`
     align-items: center;
 `
 
-const Dropdown = ({gameInfo, data}) => {
+const Dropdown = ({gameInfo, data, updateScores}) => {
 
     const [correctAnswer, setCorrectAnswer] = useState({})
     const [guess, setGuess] = useState(null)
@@ -31,7 +31,9 @@ const Dropdown = ({gameInfo, data}) => {
     }
 
     const processGuess = (userGuess) => {
-        setGuess(userGuess === correctAnswer.name.toLowerCase())
+        const result = userGuess === correctAnswer.name.toLowerCase()
+        setGuess(result)
+        updateScores(result)
     }
 
     const newGame = () => {
@@ -41,6 +43,7 @@ const Dropdown = ({gameInfo, data}) => {
 
     return(
         <Game>
+            {/* <Scores scores={scores}/> */}
             {guess === null 
                 ? <Question text={gameInfo.question}/>
                 : <Result guess={guess} answer={correctAnswer} text={gameInfo.answer}/>}

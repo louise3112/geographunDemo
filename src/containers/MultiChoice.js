@@ -15,7 +15,7 @@ const Game = styled.div`
     align-items: center;
 `
 
-const MultiChoice = ({gameInfo, data}) => {
+const MultiChoice = ({gameInfo, data, updateScores}) => {
 
     const [answers, setAnswers] = useState([])
     const [correctAnswer, setCorrectAnswer] = useState({})
@@ -43,6 +43,7 @@ const MultiChoice = ({gameInfo, data}) => {
 
     const processAnswer = (result) => {
         setGuess(result)
+        updateScores(result)
     }
 
     const newGame = () => {

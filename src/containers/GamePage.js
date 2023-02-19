@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react"
+import Scores from "../components/games/Scores"
 import MultiChoice from "./MultiChoice"
 import Dropdown from "./Dropdown"
 
 import styled from "styled-components"
 
 const Game = styled.div`
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,6 +21,7 @@ const GameName = styled.h2`
 const GamePage = ({gameInfo}) => {
 
     const [allCountries, setAllCountries] = useState([])
+    const [scores, setScores] = useState({currentRun: 0, bestRun: 0})
 
     useEffect( () => {
         getData()
@@ -53,15 +56,26 @@ const GamePage = ({gameInfo}) => {
 
     const gameType = () => {
         if (gameInfo.type === "multichoice") {
-            return <MultiChoice gameInfo={gameInfo} data={allCountries}/>
+            return <MultiChoice gameInfo={gameInfo} data={allCountries} updateScores={updateScores}/>
         } else if (gameInfo.type === "dropdown") {
-            return <Dropdown gameInfo={gameInfo} data={allCountries}/>
+            return <Dropdown gameInfo={gameInfo} data={allCountries} updateScores={updateScores}/>
         }
+    }
+
+    const updateScores = (result) => {
+        const newScores = {...scores}
+        {result ? newScores.currentRun += 1 : newScores.currentRun = 0}
+        if (result && newScores.currentRun > newScores.bestRun) {
+            newScores.bestRun = newScores.currentRun
+        }
+        setScores(newScores)
     }
 
     return (
         <Game>
             <GameName>{gameInfo.name}</GameName>
+            <Scores scores={scores}/>
+
             {allCountries.length > 0 && gameType()}
         </Game>
     )
