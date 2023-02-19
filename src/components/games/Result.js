@@ -29,11 +29,9 @@ const Result = ({guess, type, answer, text}) => {
     }
 
     return (
-        <>{resultText()}</>
-        // <Answer>{guess
-        //     ? "You got it! " + text + answer.name + "!"
-        //     : "Wrong! " + text + answer.name + "!"}
-        // </Answer>
+        <>
+            {resultText()}
+        </>
     )
 }
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
 
-import { randomCountries, randomIndex } from "../helpers/usefulFunctions"
+import { randomCountries } from "../helpers/usefulFunctions"
 
 import Question from "../components/games/Question"
 import Clue from "../components/games/Clue"
@@ -43,7 +43,6 @@ const Dropdown = ({gameInfo, data, updateScores}) => {
 
     return(
         <Game>
-            {/* <Scores scores={scores}/> */}
             {guess === null 
                 ? <Question text={gameInfo.question}/>
                 : <Result guess={guess} answer={correctAnswer} text={gameInfo.answer}/>}

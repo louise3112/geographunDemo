@@ -106,7 +106,6 @@ const Countries = () => {
             <ListByContinent>
                 {countriesByContinent}
             </ListByContinent>
-            {/* <ContinentsList allCountries={searchedCountry(allCountries, searchText)} allContinents={allContinents}/> */}
         </Container>
     )
 }
