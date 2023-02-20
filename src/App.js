@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { HashRouter as Router, Routes, Route } from "react-router-dom"
 import styled from "styled-components"
 
 import { gameData } from "./helpers/gameData"
@@ -19,9 +19,12 @@ const Container = styled.div`
 
 function App() {
 
+    // import {Route, HashRouter as Router, Switch} from ‘react-router-dom’;
+
+
     return (
         <Container>
-            <Router>
+            <Router baseline="/">
                 <NavBar gameData={gameData}/>
                 <Routes>
                     <Route path="/geographun-demo" element={<GamesHome gameData={gameData}/>}/>
