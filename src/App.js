@@ -19,22 +19,19 @@ const Container = styled.div`
 
 function App() {
 
-    // import {Route, HashRouter as Router, Switch} from ‘react-router-dom’;
-
-
     return (
         <Container>
-            <Router baseline="/">
+            <Router baseline="/geographun-demo">
                 <NavBar gameData={gameData}/>
                 <Routes>
-                    <Route path="/geographun-demo" element={<GamesHome gameData={gameData}/>}/>
-                    <Route path="/geographun-demo/flags" element={<GamePage gameInfo={gameData.flags} />} />
-                    <Route path="/geographun-demo/languages" element={<GamePage gameInfo={gameData.languages} />} />
-                    <Route path="/geographun-demo/capitals" element={<GamePage gameInfo={gameData.capitals} />} />
-                    <Route path="/geographun-demo/populations" element={<GamePage gameInfo={gameData.populations} />} />
+                    <Route path="/" element={<GamesHome gameData={gameData}/>}/>
+                    <Route path="/flags" element={<GamePage gameInfo={gameData.flags} />} />
+                    <Route path="/languages" element={<GamePage gameInfo={gameData.languages} />} />
+                    <Route path="/capitals" element={<GamePage gameInfo={gameData.capitals} />} />
+                    <Route path="/populations" element={<GamePage gameInfo={gameData.populations} />} />
 
-                    <Route path="/geographun-demo/countries" element={<Countries/>} />
-                    <Route path="/geographun-demo/countries/:name" element={<CountryDetails/>} />
+                    <Route path="/countries" element={<Countries/>} />
+                    <Route path="/countries/:name" element={<CountryDetails/>} />
                 </Routes>
                 <Footer />
             </Router>

@@ -52,21 +52,21 @@ const NavBar = ({gameData}) => {
 
     return (
         <NavBarContainer>
-            <LogoLink to="/geographun-demo">
+            <LogoLink to="/">
                 <img src={Logo} alt="geograPHUN logo" height="80em"/>
             </LogoLink>
 
             <GamesDropdown>
-                <SectionLink to="/geographun-demo">Games</SectionLink>
+                <SectionLink to="/">Games</SectionLink>
                 <DropdownContent>
-                    <GamesLink to="/geographun-demo/flags">{gameData.flags.name}</GamesLink>
-                    <GamesLink to="/geographun-demo/languages">{gameData.languages.name}</GamesLink>
-                    <GamesLink to="/geographun-demo/capitals">{gameData.capitals.name}</GamesLink>
-                    <GamesLink to="/geographun-demo/populations">{gameData.populations.name}</GamesLink>
+                    <GamesLink to="/flags">{gameData.flags.name}</GamesLink>
+                    <GamesLink to="/languages">{gameData.languages.name}</GamesLink>
+                    <GamesLink to="/capitals">{gameData.capitals.name}</GamesLink>
+                    <GamesLink to="/populations">{gameData.populations.name}</GamesLink>
                 </DropdownContent>
             </GamesDropdown>
 
-            <SectionLink to="/geographun-demo/countries">Countries Facts</SectionLink>
+            <SectionLink to="/countries">Countries Facts</SectionLink>
         </NavBarContainer>
     )
 }
