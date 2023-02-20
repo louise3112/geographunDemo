@@ -5,7 +5,7 @@ const QuestionText = styled.p`
     font-size: 1.3em;
     text-align: center;
     margin: 0.5em 0em 0em 0em;
-    max-width: 70%;
+    max-width: 30em;
 `
 
 const Question = ({text}) => {

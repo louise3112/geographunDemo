@@ -38,8 +38,8 @@ const GamePage = ({gameInfo}) => {
                     code: country.cca3,
                     flag: country.flags.svg,
                     population: country.population,
-                    language: Object.values(country.languages)[0],
-                    capital: country.capital[0],
+                    language: Object.values(country.languages), //array
+                    capital: country.capital[0], 
                     region: country.region,
                     subregion: country.subregion,
                     latitude: country.latlng[0],
@@ -47,7 +47,7 @@ const GamePage = ({gameInfo}) => {
                     maps: country.maps.googleMaps,
                     timezones: country.timezones, //array
                     continents: country.continents, // array
-                    currencies: country.currencies, // object
+                    currencies: Object.values(country.currencies)[0], // array
                     landlocked: country.landlocked,// boolean
                     borders: country.borders // array
                 }))

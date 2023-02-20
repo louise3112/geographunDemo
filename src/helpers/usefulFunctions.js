@@ -7,15 +7,37 @@ export const randomIndex = (totalOptions) => {
 export const randomCountries = (array, n, category) => {
     const selected = []
     const remaining = [...array]
+    const categoryIsArray = Array.isArray(array[0][category])
+    let uniqueAnswers = ""
 
-    for (let i = 0; i < n;) {
+    for (let i = 0; i < n; ) {
         let index = randomIndex(remaining.length)
-        let newAnswer = remaining[index]
+        let newAnswer = {...remaining[index]} // country object
 
-        // Assess uniquness of answer value:
-        let answerExists = selected.findIndex(answer => answer[category] === newAnswer[category])
+        if (categoryIsArray) {
+            // Check if all values are unique 
+            let duplicateCount = 0
+            newAnswer[category].forEach(element => {
+                if (uniqueAnswers.includes(element)) {
+                    duplicateCount += 1
+                }
+            })
 
-        if (answerExists < 0) {
+            // If all values are unique then:
+            if (duplicateCount === 0) {
+                // Add answer values to uniqueAnswers array:
+                uniqueAnswers += newAnswer[category].toString()
+
+                // Amend newAnswer object to contain a single object for the category, rather than an array
+                newAnswer[category] = newAnswer[category][0]
+
+                selected.push(newAnswer)
+                remaining.splice(index, 1)
+                i++
+            }
+
+        } else if (!uniqueAnswers.includes(newAnswer[category])) {
+            uniqueAnswers += newAnswer[category]
             selected.push(newAnswer)
             remaining.splice(index, 1)
             i++

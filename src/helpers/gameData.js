@@ -27,7 +27,7 @@ export const gameData = {
         category: "capital",
         type: "dropdown",
         name: "A Question Of Capitals",
-        question: "Guess which country this city is the capital of by typing the name of the conutry in the box.",
+        question: "Guess which country this city is the capital of by typing the name of the country in the box.",
         answer: "This city is the capital of ",
         image: capitals
     },
