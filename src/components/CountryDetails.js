@@ -72,12 +72,13 @@ const CountryDetails = () => {
             {country.flag && <Flag src={country.flag} />}
             <CountryInfoTitle>{country.name}</CountryInfoTitle>
             <CountryInfo>
-                <p><strong>Region:</strong> {country.region}</p>
-                <p><strong>Subregion:</strong> {country.subregion}</p>
-                <p><strong>Languages:</strong> {country.language.join(", ")}</p>
-                <p><strong>Currency:</strong> {joinStringNestedObject(country.currencies)}</p>
-                {country.population && <p><strong>Population:</strong> {country.population.toLocaleString()}</p> }  
                 <p><strong>Capital:</strong> {country.capital}</p>
+                {country.population && <p><strong>Population:</strong> {country.population.toLocaleString()}</p> }  
+                {country.language && <p><strong>Languages:</strong> {country.language.join(", ")}</p>}
+                <p><strong>Currency:</strong> {joinStringNestedObject(country.currencies)}</p> 
+                {country.continents && <p><strong>Continent:</strong> {country.continents.join(", ")}</p>}
+                {/* <p><strong>Region:</strong> {country.region}</p> */}
+                <p><strong>Subregion:</strong> {country.subregion}</p>
                 <p><strong>Latitude / Longitude:</strong> {Math.round(country.latitude) + " / " + Math.round(country.longitude)}</p>
             </CountryInfo>
         </Container>
