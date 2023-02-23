@@ -74,7 +74,7 @@ const CountryDetails = () => {
             <CountryInfo>
                 <p><strong>Region:</strong> {country.region}</p>
                 <p><strong>Subregion:</strong> {country.subregion}</p>
-                <p><strong>Languages:</strong> {country.language}</p>
+                <p><strong>Languages:</strong> {country.language.join(", ")}</p>
                 <p><strong>Currency:</strong> {joinStringNestedObject(country.currencies)}</p>
                 {country.population && <p><strong>Population:</strong> {country.population.toLocaleString()}</p> }  
                 <p><strong>Capital:</strong> {country.capital}</p>
